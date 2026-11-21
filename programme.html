@@ -42,34 +42,6 @@
       padding: 0 24px;
     }
 
-    /* Outline Rectangle System */
-    .outline-box {
-      border: 2px solid var(--navy);
-      background: var(--white);
-      position: relative;
-    }
-
-    .outline-box-emerald {
-      border: 2.5px solid var(--emerald);
-      background: var(--white);
-      position: relative;
-    }
-
-    .outline-accent {
-      position: relative;
-    }
-    .outline-accent::after {
-      content: "";
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      right: -10px;
-      bottom: -10px;
-      border: 2px solid var(--emerald);
-      pointer-events: none;
-      z-index: 0;
-    }
-
     /* Header */
     header {
       border-bottom: 2px solid var(--navy);
@@ -273,7 +245,7 @@
       margin-bottom: 14px;
     }
 
-    /* Phases / Weg (wie frauenundbusiness.de/programme/) */
+    /* Phases / Weg */
     .phases-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -425,32 +397,20 @@
       color: var(--text-muted);
     }
 
-    .program-price-box {
+    .program-tag-box {
       border: 2px solid var(--navy);
-      padding: 16px 24px;
-      text-align: right;
+      padding: 12px 20px;
       background: var(--navy-light);
-    }
-
-    .program-detail.focus-program .program-price-box {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .program-detail.focus-program .program-price-box .price-main {
-      color: var(--emerald);
-    }
-
-    .price-main {
       font-family: 'Poppins', sans-serif;
-      font-size: 1.65rem;
       font-weight: 700;
+      font-size: 0.9rem;
       color: var(--navy);
     }
 
-    .price-note {
-      font-size: 0.82rem;
-      opacity: 0.85;
+    .program-detail.focus-program .program-tag-box {
+      background: var(--navy);
+      color: var(--emerald);
+      border-color: var(--emerald);
     }
 
     .modules-grid {
@@ -473,10 +433,6 @@
     }
 
     .module-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
       margin-bottom: 12px;
       border-bottom: 1.5px solid var(--emerald);
       padding-bottom: 8px;
@@ -484,14 +440,6 @@
 
     .module-header h4 {
       font-size: 1.05rem;
-    }
-
-    .module-price {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--navy);
-      white-space: nowrap;
     }
 
     .module-card ul {
@@ -604,7 +552,7 @@
         <a href="index.html">Startseite</a>
         <a href="#weg">Ihr Weg</a>
         <a href="#programme">Programme</a>
-        <a href="#vergleich">Vergleich & Preise</a>
+        <a href="#vergleich">Leistungsvergleich</a>
         <a href="#kontakt" class="btn btn-primary" style="margin-left: 20px; padding: 8px 18px;">Erstgespräch</a>
       </nav>
     </div>
@@ -635,7 +583,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-kicker">Ihr Weg zu planbarer Sichtbarkeit</span>
-        <h2>Vier Stufen – vom schnellen Fundament bis zur Jahresbegleitung</h2>
+        <h2>Vier Programme – vom schnellen Fundament bis zur Jahresbegleitung</h2>
         <p>Starten Sie mit einem klaren Fundament und entscheiden Sie danach, wie viel operative Umsetzung Sie abgeben möchten.</p>
       </div>
 
@@ -736,17 +684,13 @@
             <h3>1. Startpaket (3 Monate)</h3>
             <div class="program-sub">Aufbau eines vollständig funktionsfähigen Marketing-Konzeptes für Ihr Fachgeschäft</div>
           </div>
-          <div class="program-price-box">
-            <div class="price-main">1.400 € netto</div>
-            <div class="price-note">zzgl. MwSt. (Positionen 1–3)</div>
-          </div>
+          <div class="program-tag-box">Fundament & Setup · 3 Monate</div>
         </div>
 
         <div class="modules-grid">
           <div class="module-card">
             <div class="module-header">
               <h4>1. Standortanalyse & Positionierung</h4>
-              <span class="module-price">690 € netto</span>
             </div>
             <ul>
               <li>Analyse des aktuellen Auftritts, der lokalen Marktposition und der Zielgruppenansprache</li>
@@ -759,7 +703,6 @@
           <div class="module-card">
             <div class="module-header">
               <h4>2. Strategischer Fahrplan Q1</h4>
-              <span class="module-price">360 € netto</span>
             </div>
             <ul>
               <li>Strukturierter Marketing- und Maßnahmenplan für Q1 2027 als Grundlage für alle weiteren Quartale</li>
@@ -772,7 +715,6 @@
           <div class="module-card">
             <div class="module-header">
               <h4>3. Social-Media-Paket</h4>
-              <span class="module-price">350 € netto</span>
             </div>
             <ul>
               <li>Aufbau und Strukturierung eines wiederkehrenden Themenrasters</li>
@@ -784,7 +726,7 @@
         </div>
 
         <div class="optional-banner">
-          <h4>Optional zubuchbar: 4. Social-Media-Management (3 Monate) – 1.050 € netto (3 × 350 € / Monat zzgl. MwSt.)</h4>
+          <h4>Optional zubuchbar: 4. Social-Media-Management (3 Monate)</h4>
           <p style="font-size: 0.94rem;">Übernahme über Meta Business Suite oder axregioconnect: einmalige Redaktionsplanung über 3 Monate, <strong>1× Termin vor Ort</strong> für Foto- und Videoaufnahme sowie monatliche Gestaltung & Planung von <strong>1 Reel, 3 Foto-Beiträgen und 1 Carousel</strong>.</p>
         </div>
       </div>
@@ -796,20 +738,16 @@
             <h3>2. Erweiterung (9 Monate)</h3>
             <div class="program-sub">Laufende Social-Media-Sichtbarkeit & strategisches Sparring für eigene Aktionen</div>
           </div>
-          <div class="program-price-box">
-            <div class="price-main">4.950 € netto</div>
-            <div class="price-note">zzgl. MwSt. (550 € / Monat im Schnitt)</div>
-          </div>
+          <div class="program-tag-box">Sichtbarkeit & Sparring · 9 Monate</div>
         </div>
 
         <div class="modules-grid-2">
           <div class="module-card">
             <div class="module-header">
               <h4>Social-Media-Management (9 Monate)</h4>
-              <span class="module-price">3.150 € netto</span>
             </div>
             <ul>
-              <li>9 Monate Betreuung über Meta Business Suite oder axregioconnect (350 € netto / Monat)</li>
+              <li>9 Monate Betreuung über Meta Business Suite oder axregioconnect</li>
               <li>Regelmäßige Vor-Ort-Aufnahmen (Foto- und Videomaterial)</li>
               <li>Monatlich 1 Reel, 3 Foto-Beiträge und 1 Carousel fertig gestaltet & eingeplant</li>
             </ul>
@@ -818,7 +756,6 @@
           <div class="module-card">
             <div class="module-header">
               <h4>Sparring-Unterstützung (9 Monate)</h4>
-              <span class="module-price">1.800 € netto</span>
             </div>
             <ul>
               <li>Monatlich ein 30-Minuten 1:1-Call für Ihre Marketing- und Aktionsplanung</li>
@@ -837,20 +774,16 @@
             <h3>3. Jahresbegleitung (12 Monate)</h3>
             <div class="program-sub">Ihre externe Marketingabteilung: Strategie, Social Media & komplette Aktionsdurchführung</div>
           </div>
-          <div class="program-price-box">
-            <div class="price-main">16.440 € netto</div>
-            <div class="price-note">zzgl. MwSt. (1.370 € / Monat im Schnitt)</div>
-          </div>
+          <div class="program-tag-box">Komplettübernahme · 12 Monate</div>
         </div>
 
         <div class="modules-grid">
           <div class="module-card">
             <div class="module-header">
               <h4>1. 4× Quartals-Strukturfahrplan</h4>
-              <span class="module-price">1.440 € netto</span>
             </div>
             <ul>
-              <li>4 strukturierte Quartalsfahrpläne über das gesamte Jahr (4 × 360 € netto)</li>
+              <li>4 strukturierte Quartalsfahrpläne über das gesamte Jahr</li>
               <li>Klare Schwerpunktthemen, Meilensteine und Verzahnung von lokal & digital</li>
               <li>Kontinuierliche Steuerung ohne Ad-hoc-Stress im Tagesgeschäft</li>
             </ul>
@@ -859,10 +792,9 @@
           <div class="module-card">
             <div class="module-header">
               <h4>2. Volle Abnahme Social Media</h4>
-              <span class="module-price">4.200 € netto</span>
             </div>
             <ul>
-              <li>12 Monate komplettes Social-Media-Management (12 × 350 € netto)</li>
+              <li>12 Monate komplettes Social-Media-Management</li>
               <li><strong>Monatlich 1× Termin vor Ort</strong> für frisches Foto- und Videomaterial im Laden</li>
               <li>Monatlich <strong>1 Reel, 3 Foto-Beiträge und 1 Carousel</strong> inkl. Redaktionsplanung</li>
             </ul>
@@ -871,10 +803,9 @@
           <div class="module-card">
             <div class="module-header">
               <h4>3. Komplette Marketingdurchführung</h4>
-              <span class="module-price">10.800 € netto</span>
             </div>
             <ul>
-              <li>Umsetzung von <strong>1 Aktion / Event pro Quartal</strong> (12 × 900 € netto / Monat)</li>
+              <li>Umsetzung von <strong>1 Aktion / Event pro Quartal</strong></li>
               <li>Übernahme der Gestaltung von Flyern, Postern, Anzeigen und Kundenbriefen</li>
               <li>Koordination & Beauftragung von Lettershop, Zeitung, Druckereien u. v. m.</li>
             </ul>
@@ -889,10 +820,7 @@
             <h3>4. Langzeitbegleitung (18 Monate)</h3>
             <div class="program-sub">Alle Leistungen der Jahresbegleitung über 18 Monate für langfristige Kontinuität</div>
           </div>
-          <div class="program-price-box">
-            <div class="price-main">24.660 € netto</div>
-            <div class="price-note">zzgl. MwSt. (1.370 € / Monat im Schnitt)</div>
-          </div>
+          <div class="program-tag-box">Langfristige Begleitung · 18 Monate</div>
         </div>
         <p style="font-size: 0.96rem;">Enthält über 18 Monate hinweg 6 Quartals-Strukturfahrpläne, die monatliche Vor-Ort-Content-Produktion (1 Reel, 3 Foto-Beiträge, 1 Carousel/Monat) sowie die komplette operative Durchführung Ihrer quartalsweisen Aktionen und Events.</p>
       </div>
@@ -902,7 +830,7 @@
   <section id="vergleich" class="section-alt">
     <div class="container">
       <div class="section-header">
-        <span class="section-kicker">Programme & Preise im Vergleich</span>
+        <span class="section-kicker">Programme im Vergleich</span>
         <h2>Alle Leistungen auf einen Blick</h2>
       </div>
 
@@ -920,36 +848,36 @@
           <tbody>
             <tr>
               <td><strong>Standortanalyse & USP-Schärfung</strong></td>
-              <td><span class="check">✔</span> (690 €)</td>
+              <td><span class="check">✔</span></td>
               <td><span class="dash">–</span> (Aufbau auf Start)</td>
               <td class="col-focus"><span class="dash">–</span> (Aufbau auf Start)</td>
               <td><span class="dash">–</span> (Aufbau auf Start)</td>
             </tr>
             <tr>
               <td><strong>Strategischer Strukturfahrplan</strong></td>
-              <td><span class="check">✔</span> 1× Q1 (360 €)</td>
+              <td><span class="check">✔</span> 1× Q1</td>
               <td><span class="dash">–</span></td>
-              <td class="col-focus"><span class="check">✔</span> 4× Quartal (1.440 €)</td>
-              <td><span class="check">✔</span> 6× Quartal (2.160 €)</td>
+              <td class="col-focus"><span class="check">✔</span> 4× Quartal</td>
+              <td><span class="check">✔</span> 6× Quartal</td>
             </tr>
             <tr>
               <td><strong>Social-Media-Vorlagen & Themenraster</strong></td>
-              <td><span class="check">✔</span> (350 €)</td>
+              <td><span class="check">✔</span></td>
               <td><span class="check">✔</span> inklusive</td>
               <td class="col-focus"><span class="check">✔</span> inklusive</td>
               <td><span class="check">✔</span> inklusive</td>
             </tr>
             <tr>
               <td><strong>Social-Media-Management</strong><br><span style="font-size:0.82rem; color:#555;">1 Reel, 3 Foto-Posts, 1 Carousel / Monat</span></td>
-              <td>Optional (+1.050 €)</td>
-              <td><span class="check">✔</span> 9 Monate (3.150 €)</td>
-              <td class="col-focus"><span class="check">✔</span> 12 Monate inkl. mtl. Vor-Ort-Dreh (4.200 €)</td>
-              <td><span class="check">✔</span> 18 Monate inkl. mtl. Vor-Ort-Dreh (6.300 €)</td>
+              <td>Optional zubuchbar</td>
+              <td><span class="check">✔</span> 9 Monate</td>
+              <td class="col-focus"><span class="check">✔</span> 12 Monate inkl. mtl. Vor-Ort-Dreh</td>
+              <td><span class="check">✔</span> 18 Monate inkl. mtl. Vor-Ort-Dreh</td>
             </tr>
             <tr>
               <td><strong>1:1 Sparring & WhatsApp-Support</strong></td>
               <td><span class="dash">–</span></td>
-              <td><span class="check">✔</span> mtl. 30-Min Call + 2 Fragen (1.800 €)</td>
+              <td><span class="check">✔</span> mtl. 30-Min Call + 2 Fragen</td>
               <td class="col-focus"><span class="check">✔</span> laufende Abstimmung inklusive</td>
               <td><span class="check">✔</span> laufende Abstimmung inklusive</td>
             </tr>
@@ -957,15 +885,8 @@
               <td><strong>Komplette Marketingdurchführung</strong><br><span style="font-size:0.82rem; color:#555;">1 Aktion/Event pro Quartal, Flyer, Anzeigen, Lettershop</span></td>
               <td><span class="dash">–</span></td>
               <td><span class="dash">–</span> (Eigenumsetzung)</td>
-              <td class="col-focus"><span class="check">✔</span> 12 Monate (900 € / Monat = 10.800 €)</td>
-              <td><span class="check">✔</span> 18 Monate (900 € / Monat = 16.200 €)</td>
-            </tr>
-            <tr>
-              <td><strong>Investition (netto zzgl. MwSt.)</strong></td>
-              <td><strong>1.400 €</strong><br><span style="font-size:0.82rem;">(mit SM: 2.450 €)</span></td>
-              <td><strong>4.950 €</strong><br><span style="font-size:0.82rem;">(Ø 550 € / Monat)</span></td>
-              <td class="col-focus"><strong>16.440 €</strong><br><span style="font-size:0.82rem;">(Ø 1.370 € / Monat)</span></td>
-              <td><strong>24.660 €</strong><br><span style="font-size:0.82rem;">(Ø 1.370 € / Monat)</span></td>
+              <td class="col-focus"><span class="check">✔</span> 12 Monate</td>
+              <td><span class="check">✔</span> 18 Monate</td>
             </tr>
           </tbody>
         </table>
