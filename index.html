@@ -1,808 +1,167 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketingagentur Annika Pflug | Hörakustik & lokale Geschäfte</title>
-    <!-- Google Fonts: Poppins Bold & Open Sans -->
+    <title>Marketingagentur Annika Pflug | Marketing für Hörakustiker & lokale Fachgeschäfte</title>
+    <meta name="description" content="Strategisches Allround-Marketing & persönliche Beratung für eigenständige Hörakustiker und inhabergeführte lokale Geschäfte. Über 10 Jahre Branchenerfahrung.">
+    
+    <!-- Tailwind CSS über CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins (Bold 700) & Open Sans (400, 600) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <!-- FontAwesome für Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --primary: #000055;
-            --accent: #50c878;
-            --white: #ffffff;
-            --light-bg: #f4f4f9;
-            --text-dark: #222222;
-            --text-gray: #555555;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6, .btn, .nav-links a, .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-badge {
-            background: var(--primary);
-            color: var(--white);
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            font-size: 1.1rem;
-        }
-
-        .logo-text h1 {
-            font-size: 1.1rem;
-            color: var(--primary);
-            line-height: 1.2;
-        }
-
-        .logo-text span {
-            font-size: 0.75rem;
-            color: var(--text-gray);
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-dark);
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .btn-nav {
-            background: var(--accent);
-            color: var(--white) !important;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            transition: opacity 0.3s !important;
-        }
-
-        .btn-nav:hover {
-            opacity: 0.9;
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 140px 5% 90px 5%;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-            width: 100%;
-        }
-
-        .hero-content h2 {
-            font-size: clamp(2.2rem, 4vw, 3.5rem);
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content h2 span {
-            color: var(--accent);
-        }
-
-        .hero-content p {
-            font-size: 1.15rem;
-            color: #e0e0e0;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 0.9rem 1.8rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            opacity: 0.95;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* Hexagon Porträt - Exakt gleich hoch wie breit & perfekt mittig */
-        .hero-image-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 380px;
-            margin: 0 auto;
-            aspect-ratio: 1 / 1;
-            background-color: var(--accent);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px;
-        }
-
-        .hero-image-inner {
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background-image: url('annika-pflug-1.jpg');
-            background-size: cover;
-            background-position: center 20%;
-            background-repeat: no-repeat;
-            background-color: #1a1a66;
-        }
-
-        .hero-badge-float {
-            margin-top: 1.5rem;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.8rem 1.2rem;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            backdrop-filter: blur(5px);
-            max-width: 380px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-badge-float i {
-            color: var(--accent);
-            font-size: 1.4rem;
-        }
-
-        .hero-badge-float small {
-            display: block;
-            color: #b0b0b0;
-            font-size: 0.8rem;
-        }
-
-        .hero-badge-float span {
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
-
-        /* Sektionen Allgemein */
-        section {
-            padding: 90px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px auto;
-        }
-
-        .section-title span {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-        }
-
-        /* Leistungen */
-        .services {
-            background-color: var(--light-bg);
-        }
-
-        .services-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-            transition: transform 0.3s;
-            border-top: 4px solid var(--accent);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .service-card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        /* Über mich */
-        .about {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(0,0,55,0.1);
-        }
-
-        .about-content h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content p {
-            color: var(--text-gray);
-            margin-bottom: 1.2rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .stat-box {
-            background: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .stat-box h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.2rem;
-        }
-
-        .stat-box p {
-            font-size: 0.85rem;
-            margin: 0;
-            color: var(--text-gray);
-        }
-
-        /* Ablauf / Methode */
-        .process {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .process .section-title h2 {
-            color: var(--white);
-        }
-
-        .process-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .process-step {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            position: relative;
-        }
-
-        .process-step span.number {
-            font-size: 2.5rem;
-            color: var(--accent);
-            opacity: 0.4;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        .process-step h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .process-step p {
-            color: #d0d0d0;
-            font-size: 0.9rem;
-        }
-
-        /* Kontakt / Call to Action */
-        .contact {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: var(--light-bg);
-            border-radius: 20px;
-            padding: 4rem 3rem;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .contact p {
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto 2.5rem auto;
-        }
-
-        .calendar-box {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: inline-block;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .calendar-box h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .calendar-box p {
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #000033;
-            color: #b0b0b0;
-            padding: 4rem 5% 2rem 5%;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col h4 {
-            color: var(--white);
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .footer-col p, .footer-col a {
-            display: block;
-            color: #b0b0b0;
-            font-size: 0.9rem;
-            margin-bottom: 0.6rem;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.5rem;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        .legal-links {
-            margin-top: 0.5rem;
-        }
-
-        .legal-links a, .legal-links button {
-            background: none;
-            border: none;
-            color: #b0b0b0;
-            cursor: pointer;
-            font-size: 0.85rem;
-            text-decoration: underline;
-            padding: 0 5px;
-            font-family: 'Open Sans', sans-serif;
-            display: inline;
-        }
-
-        .legal-links a:hover, .legal-links button:hover {
-            color: var(--accent);
-        }
-
-        /* Modal für Datenschutz */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background-color: var(--white);
-            color: var(--text-dark);
-            padding: 2.5rem;
-            border-radius: 12px;
-            max-width: 700px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-gray);
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        .close-modal:hover {
-            color: var(--primary);
-        }
-
-        .modal-content h3 {
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-            font-size: 1.5rem;
-        }
-
-        .modal-content p {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin-bottom: 0.8rem;
-        }
-
-        /* Mobile Responsive */
-        @media(max-width: 900px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
-            }
-            .hero-content p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .about {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <div class="logo-badge">AP</div>
-            <div class="logo-text">
-                <h1>Agentur Annika Pflug</h1>
-                <span>@sichtbar.fuer.akustiker</span>
-            </div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#leistungen">Leistungen</a></li>
-            <li><a href="#ueber-mich">Über mich</a></li>
-            <li><a href="#ablauf">Ablauf</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-            <li><a href="https://calendar.app.google/EXASZxKQuKdmdDcs7" target="_blank" class="btn-nav"><i class="fa-regular fa-calendar-days"></i> 15-Min. Strategiegespräch</a></li>
-        </ul>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h2>Marketing für eigenständige <span>Hörakustikbetriebe</span> & lokale Fachgeschäfte</h2>
-                <p>Strategisches Allround-Marketing & persönliche Beratung auf Augenhöhe – damit Ihr Fachgeschäft vor Ort sichtbar wird und genau die Kunden gewinnt, die zu Ihnen passen.</p>
-                <div class="hero-buttons">
-                    <a href="https://calendar.app.google/EXASZxKQuKdmdDcs7" target="_blank" class="btn btn-primary">
-                        <i class="fa-regular fa-calendar-days"></i> 15-minütiges Gespräch buchen
-                    </a>
-                    <a href="#leistungen" class="btn btn-outline">
-                        Leistungen entdecken
-                    </a>
-                </div>
-            </div>
-            <div>
-                <div class="hero-image-wrapper">
-                    <div class="hero-image-inner"></div>
-                </div>
-                <div class="hero-badge-float">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <div>
-                        <small>Branchenspezialistin</small>
-                        <span>10+ Jahre Hörakustik & 60+ Standorte</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leistungen Sektion -->
-    <section id="leistungen" class="services">
-        <div class="section-title">
-            <span>Maßgeschneidert & Individuell</span>
-            <h2>Worauf es bei Ihnen vor Ort ankommt</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fa-solid fa-compass"></i>
-                <h3>Allround-Marketing & Strategie</h3>
-                <p>Keine starren Standard-Pakete. Im persönlichen Austausch analysieren wir genau, wo Ihr Betrieb steht und welche Marketing-Hebel in Ihrer Region den größten Effekt erzielen.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-mobile-screen-button"></i>
-                <h3>Social Media & Online-Präsenz</h3>
-                <p>Sichtbar werden mit Profil: Von Instagram über LinkedIn bis zu organischen Inhalten (@sichtbar.fuer.akustiker) positionieren wir Ihren Fachbetrieb modern und nahbar.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-location-dot"></i>
-                <h3>Lokale Kundengewinnung</h3>
-                <p>Bauen Sie Vertrauen in Ihrer Region auf. Wir verknüpfen digitale Leads mit echter, handwerklicher Qualität, damit Neukunden direkt zu Ihnen ins Fachgeschäft kommen.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Über mich Sektion -->
-    <section id="ueber-mich">
-        <div class="about">
-            <div class="about-image">
-                <img src="annika-pflug-2.jpg" alt="Annika Pflug Marketingagentur">
-            </div>
-            <div class="about-content">
-                <span>Ihre Expertin</span>
-                <h2>Persönliche Beratung aus jahrelanger Praxiserfahrung</h2>
-                <p>Als Marketing-Expertin für Hörakustik und lokale Fachgeschäfte kenne ich die Herausforderungen des Marktes aus erster Hand. Ich begleite Sie unkompliziert, pragmatisch und auf Augenhöhe.</p>
-                <p>Mein Ansatz: Kein anonymer Agentur-Wasserkopf, sondern ehrliche Partnerschaft, strategische Klarheit und maßgeschneiderte Lösungen, die zu Ihrem Betrieb passen.</p>
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <h3>10+</h3>
-                        <p>Jahre Branchenexpertise</p>
-                    </div>
-                    <div class="stat-box">
-                        <h3>60+</h3>
-                        <p>Betreute Standorte</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ablauf Sektion -->
-    <section id="ablauf" class="process">
-        <div class="section-title">
-            <span>Ihr Weg zum Erfolg</span>
-            <h2>So arbeiten wir zusammen</h2>
-        </div>
-        <div class="process-grid">
-            <div class="process-step">
-                <span class="number">01</span>
-                <h3>Strategiegespräch</h3>
-                <p>Wir sprechen kurz unverbindlich (15 Minuten) via Google Kalender über Ihre aktuelle Situation und Ihre Ziele vor Ort.</p>
-            </div>
-            <div class="process-step">
-                <span class="number">02</span>
-                <h3>Analyse & Bedarf</h3>
-                <p>Gemeinsam schauen wir, wo der Schuh drückt und welche Marketing-Maßnahmen für Ihren Akustikbetrieb am meisten Sinn machen.</p>
-            </div>
-            <div class="process-step">
-                <span class="number">03</span>
-                <h3>Umsetzung & Sichtbarkeit</h3>
-                <p>Wir setzen die Maßnahmen Hand in Hand um, damit Sie in Ihrer Region als Top-Fachgeschäft wahrgenommen werden.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kontakt / Termin Sektion -->
-    <section id="kontakt">
-        <div class="contact">
-            <h2>Bereit für mehr Sichtbarkeit?</h2>
-            <p>Lernen Sie sich und Ihren Betrieb in einem kurzen, unverbindlichen Kennenlernen kennen. Sichern Sie sich Ihren Wunschtermin direkt online.</p>
-            <div class="calendar-box">
-                <h3>15-minütiges Strategiegespräch</h3>
-                <p>Wählen Sie Ihren Wunschtermin unkompliziert über meinen Google Kalender aus:</p>
-                <a href="https://calendar.app.google/EXASZxKQuKdmdDcs7" target="_blank" class="btn btn-primary">
-                    <i class="fa-regular fa-calendar-days">&nbsp;</i> Termin jetzt buchen
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Marketingagentur Annika Pflug</h4>
-                <p>Speyerer Straße 17</p>
-                <p>76448 Durmersheim</p>
-                <p>Email: marketingagenturapflug@gmail.com</p>
-            </div>
-            <div class="footer-col">
-                <h4>Social Media</h4>
-                <a href="https://instagram.com/sichtbar.fuer.akustiker" target="_blank">Instagram: @sichtbar.fuer.akustiker</a>
-                <a href="https://threads.net/@sichtbar.fuer.akustiker" target="_blank">Threads: @sichtbar.fuer.akustiker</a>
-                <a href="https://linkedin.com" target="_blank">LinkedIn: Hörakustik Marketing</a>
-                <a href="https://linktr.ee/sichtbar.fuer.akustiker" target="_blank">Linktr.ee / Übersicht</a>
-            </div>
-            <div class="footer-col">
-                <h4>Direktkontakt</h4>
-                <p>15-Min. Strategiegespräch:</p>
-                <a href="https://calendar.app.google/EXASZxKQuKdmdDcs7" target="_blank" style="color: var(--accent);">Google Kalender öffnen</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Marketingagentur Annika Pflug. Alle Rechte vorbehalten.</p>
-            <div class="legal-links">
-                <a href="impressum.html">Impressum</a> | 
-                <button onclick="openModal('datenschutzModal')">Datenschutz</button>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Datenschutz Modal -->
-    <div id="datenschutzModal" class="modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('datenschutzModal')">&times;</button>
-            <h3>Datenschutzerklärung</h3>
-            <p><strong>1. Datenschutz auf einen Blick</strong></p>
-            <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
-            <p><strong>2. Hosting über GitHub Pages</strong></p>
-            <p>Diese Website wird gehostet über GitHub Pages (GitHub Inc.). Beim Besuch der Seite erfasst GitHub Server-Logfiles zur Betriebssicherheit.</p>
-            <p><strong>3. Terminbuchung via Google Kalender</strong></p>
-            <p>Wenn Sie den Link zum Google Kalender für das 15-minütige Strategiegespräch nutzen, gelten die Datenschutzbestimmungen von Google LLC.</p>
-        </div>
-    </div>
-
+    <!-- Tailwind Custom Configuration mit den exakten Markenfarben -->
     <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            DEFAULT: '#000055',
+                            light: '#0a0a75',
+                            dark: '#00003b',
+                            tint: 'rgba(0, 0, 85, 0.05)',
+                        },
+                        emeraldBrand: {
+                            DEFAULT: '#50C878',
+                            hover: '#42b368',
+                            tint: 'rgba(80, 200, 120, 0.12)',
+                        }
+                    }
+                }
             }
         }
     </script>
-</body>
-</html>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #FFFFFF;
+            color: #000055;
+        }
+        h1, h2, h3, h4, .font-heading, .btn-heading {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        /* Sechseckige (Hexagon) Rahmenform für Annikas Porträt (inspiriert von deinem Branding) */
+        .hexagon-outer {
+            clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+        }
+        .hexagon-inner {
+            clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+        }
+    </style>
+</head>
+<body class="bg-white text-[#000055] antialiased selection:bg-[#50C878] selection:text-[#000055]">
+
+    <!-- ======================== 1. STICKY NAVIGATION ======================== -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-[#000055]/10 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Markenname -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 hexagon-outer bg-[#000055] text-[#50C878] flex items-center justify-center font-heading font-bold text-base tracking-wider group-hover:bg-[#0a0a75] transition-colors shrink-0">
+                        AP
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-bold text-base sm:text-lg tracking-tight text-[#000055] leading-tight">
+                            Agentur Annika Pflug
+                        </span>
+                        <span class="text-[11px] font-semibold text-[#000055]/70 hidden sm:block">
+                            @sichtbar.fuer.akustiker
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-7">
+                    <a href="#leistungen" class="text-sm font-semibold text-[#000055]/85 hover:text-[#000055] transition-colors">Leistungen</a>
+                    <a href="programme.html" class="text-sm font-bold text-[#000055] hover:text-[#42b368] transition-colors">Programme</a>
+                    <a href="#ueber-mich" class="text-sm font-semibold text-[#000055]/85 hover:text-[#000055] transition-colors">Über mich</a>
+                    <a href="#ablauf" class="text-sm font-semibold text-[#000055]/85 hover:text-[#000055] transition-colors">Ablauf</a>
+                    <a href="#kontakt" class="text-sm font-semibold text-[#000055]/85 hover:text-[#000055] transition-colors">Kontakt</a>
+                    <a href="https://calendar.app.google/EXASZxKQuKdmdDcs7" target="_blank" rel="noopener noreferrer" class="btn-heading px-5 py-2.5 rounded-xl bg-[#50C878] hover:bg-[#42b368] text-[#000055] text-sm font-bold transition-all shadow-sm hover:shadow inline-flex items-center gap-2">
+                        <span>15-Min. Strategiegespräch</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" aria-label="Menü öffnen" class="lg:hidden p-2.5 rounded-xl text-[#000055] hover:bg-[rgba(0,0,85,0.05)] transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-[#000055]/10 px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            <a href="#leistungen" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-[#000055] hover:bg-[rgba(0,0,85,0.05)]">Leistungen</a>
+            <a href="programme.html" class="mobile-link block px-4 py-3 rounded-xl text-base font-bold text-[#000055] hover:bg-[rgba(80,200,120,0.15)]">Programme →</a>
+            <a href="#ueber-mich" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-[#000055] hover:bg-[rgba(0,0,85,0.05)]">Über mich</a>
+            <a href="#ablauf" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-[#000055] hover:bg-[rgba(0,0,85,0.05)]">Ablauf</a>
+            <a href="#kontakt" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-[#000055] hover:bg-[rgba(0,0,85,0.05)]">Kontakt</a>
+            <div class="pt-2">
+                <a href="https://calendar.app.google/EXASZxKQuKdmdDcs7" target="_blank" rel="noopener noreferrer" class="mobile-link btn-heading block w-full text-center px-5 py-3.5 rounded-xl bg-[#50C878] hover:bg-[#42b368] text-[#000055] font-bold transition-colors shadow-sm">
+                    15-minütiges Strategiegespräch buchen
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======================== 2. HERO-SEKTION ======================== -->
+        <section class="relative overflow-hidden bg-[#000055] text-white pt-14 pb-20 lg:pt-20 lg:pb-28">
+            <!-- Dekoratives Hexagon-Netz im Hintergrund (oben rechts, inspiriert von deinem Branding) -->
+            <svg class="absolute top-0 right-0 w-[340px] sm:w-[520px] h-auto text-[#50C878] opacity-35 pointer-events-none" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g stroke="currentColor" stroke-width="1.3">
+                    <polygon points="260,10 295,30 295,70 260,90 225,70 225,30"/>
+                    <polygon points="330,10 365,30 365,70 330,90 295,70 295,30"/>
+                    <polygon points="295,70 330,90 330,130 295,150 260,130 260,90"/>
+                    <polygon points="365,70 400,90 400,130 365,150 330,130 330,90"/>
+                    <polygon points="225,70 260,90 260,130 225,150 190,130 190,90"/>
+                    <polygon points="260,130 295,150 295,190 260,210 225,190 225,150"/>
+                    <polygon points="330,130 365,150 365,190 330,210 295,190 295,150"/>
+                    <polygon points="190,130 225,150 225,190 190,210 155,190 155,150"/>
+                </g>
+                <g fill="#FFFFFF">
+                    <circle cx="260" cy="10" r="3"/><circle cx="330" cy="10" r="3"/><circle cx="295" cy="70" r="3.5"/>
+                    <circle cx="365" cy="70" r="3"/><circle cx="260" cy="130" r="3.5"/><circle cx="330" cy="130" r="3"/>
+                    <circle cx="225" cy="150" r="3"/><circle cx="295" cy="190" r="3"/>
+                </g>
+            </svg>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                    <!-- Linke Textspalte -->
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-3 mb-5">
+                            <span class="hidden sm:inline-block w-12 h-0.5 bg-[#50C878]"></span>
+                            <span class="font-heading text-xs sm:text-sm uppercase tracking-[0.18em] text-[#50C878]">
+                                Agentur Annika Pflug
+                            </span>
+                        </div>
+                        
+                        <h1 class="font-heading text-3xl sm:text-5xl lg:text-[3.1rem] font-bold tracking-tight leading-[1.15] mb-6 text-white">
+                            Marketing für eigenständige <span class="text-[#50C878]">Hörakustikbetriebe</span> &amp; lokale Fachgeschäfte
+                        </h1>
+                        
+                        <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto lg:mx-0 mb-9 leading-relaxed font-normal">
+                            Strategisches Allround-Marketing &amp; persönliche Beratung auf Augenhöhe – damit Ihr Fachgeschäft vor Ort sichtbar wird und genau die Kunden gewinnt, die zu Ihnen passen.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="https://calendar.app.google/EXASZxKQuKdmdDcs7" target="_blank" rel="noopener noreferrer" class="btn-heading px-7 py-4 rounded-xl bg-[#50C878] hover:bg-[#42b368] text-[#000055] font-bold text-base shadow-lg transition-all text-center inline-flex items-center justify-center gap-2.5">
+                                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                <span>15-minütiges Strategiegespräch buchen</span>
+                            </a>
+                            <a href="programme.html" class="btn-heading px-7 py-4 rounded-xl bg-transparent hover:bg-white/10 text-[#50C878] font-bold text-base border-2 border-[#50C878] hover:bg
