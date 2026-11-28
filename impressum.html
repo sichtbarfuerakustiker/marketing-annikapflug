@@ -1,1 +1,214 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Marketingagentur Annika Pflug</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000055;
+            --accent: #50C878;
+            --white: #ffffff;
+            --light-bg: #f4f4f9;
+            --text-dark: #222222;
+            --text-gray: #555555;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            line-height: 1.7;
+        }
+        h1, h2, h3, .btn {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary);
+        }
+        .logo-badge {
+            background: var(--primary);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .back-link:hover { color: var(--accent); }
+        main {
+            max-width: 850px;
+            margin: 50px auto;
+            background: var(--white);
+            padding: 3.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,55,0.05);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+        }
+        p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+        .contact-form-box {
+            background: var(--light-bg);
+            padding: 1.8rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--primary);
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+        }
+        .btn-submit {
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 0.85rem 1.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .btn-submit:hover { opacity: 0.9; }
+        footer {
+            background: #000033;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.85rem;
+        }
+        footer a { color: var(--white); text-decoration: underline; }
+        @media(max-width: 600px) {
+            main { margin: 20px 15px; padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link">
+            <div class="logo-badge">AP</div>
+            <span><strong>Agentur Annika Pflug</strong></span>
+        </a>
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Zurück zur Startseite</a>
+    </header>
+
+    <main>
+        <h1>Impressum</h1>
+
+        <h2>Angaben gemäß § 5 DDG</h2>
+        <p>
+            Annika Pflug<br>
+            Marketingagentur Annika Pflug (Einzelunternehmen)<br>
+            Speyerer Straße 17<br>
+            76448 Durmersheim<br>
+            Deutschland
+        </p>
+
+        <h2>Kontaktmöglichkeiten</h2>
+        <p>
+            <strong>1. E-Mail:</strong> <a href="mailto:marketingagenturapflug@gmail.com" style="color: var(--primary);">marketingagenturapflug@gmail.com</a><br>
+            <strong>2. Direktanfrage (Elektronisches Kontaktformular):</strong> Nutzen Sie für eine schnelle und unmittelbare Kontaktaufnahme gerne das nachfolgende Formular.
+        </p>
+
+        <div class="contact-form-box">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Kostenlosen Access-Key von web3forms.com hier einfügen -->
+                <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_ACCESS_KEY_HIER">
+                <input type="hidden" name="subject" value="Schnellanfrage über Impressum (Agentur)">
+                <div class="form-group">
+                    <label for="name">Ihr Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Ihre E-Mail-Adresse *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ihre Nachricht *</label>
+                    <textarea id="message" name="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Nachricht direkt senden</button>
+            </form>
+        </div>
+
+        <h2>Redaktionell verantwortlich gemäß § 18 Abs. 2 MStV</h2>
+        <p>
+            Annika Pflug<br>
+            Speyerer Straße 17<br>
+            76448 Durmersheim
+        </p>
+
+        <h2>Steuerliche Angaben</h2>
+        <p>
+            Steuernummer: 61 782 834 504<br>
+            *(Hinweis: Sofern eine USt-IdNr. vorhanden ist, hier eintragen – andernfalls diese Zeile entfernen)*
+        </p>
+
+        <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+        <p>
+            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+
+        <h2>Haftung für Inhalte und Links</h2>
+        <p>
+            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Unser Angebot enthält zudem Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Marketingagentur Annika Pflug | <a href="index.html">Startseite</a></p>
+    </footer>
+
+</body>
+</html>
